@@ -6,7 +6,7 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-from tensorflow.keras.models import load_model, load_weights
+from tensorflow.keras.models import*
 from tensorflow.keras.preprocessing import image
 
 
