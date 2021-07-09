@@ -6,7 +6,7 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-from tensorflow.keras.models import load_model
+import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 
 
@@ -104,7 +104,7 @@ def main():
     img_test = preprocess_image('./test.jpg')
 
     model_path = 'model/best_model.h5'
-    model = load_model(model_path)
+    model = tf.keras.models.load_model(model_path)
     pred_probs = model.predict(img_test)[0]
     print(pred_probs)
 
