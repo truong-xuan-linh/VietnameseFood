@@ -1,4 +1,5 @@
 import ast
+import os
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -102,8 +103,8 @@ elif url:
     )
 
 img_test = preprocess_image('./test.jpg')
-model = load_model('model/')
-model.load_weights('model/')
+model = load_model('model/final_model.h5')
+model.load_weights('model/final_model.h5')
 pred_probs = model.predict(img_test)[0]
 print(pred_probs)
 
