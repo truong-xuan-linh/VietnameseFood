@@ -6,8 +6,8 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
+from keras.models import load_model
+from keras.preprocessing import image
 
 
 classes = [
