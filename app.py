@@ -73,7 +73,7 @@ st.markdown(
     '''
     <center>
         <img 
-            src='https://www.google.com/logos/doodles/2020/celebrating-banh-mi-6753651837108330.3-2xa.gif' 
+            src='https://image.thanhnien.vn/1024/uploaded/daly/2018_12_11/2_iwse.jpg' 
             style='width: 90%;'
         >
     </center><br/>
