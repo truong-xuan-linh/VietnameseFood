@@ -84,7 +84,7 @@ st.markdown(
 uploaded_file = st.file_uploader("Choose a file")
 url = st.text_input(
 	'Image Url: ', 
-	'https://upload.wikimedia.org/wikipedia/commons/5/53/Pho-Beef-Noodles-2008.jpg'
+	'https://cdn.tgdd.vn/Files/2020/03/09/1241004/3-mon-banh-mi-kep-la-mieng-hap-dan-thom-ngon-kho-cuong-13.jpg'
 )
 st.write('')
 st.write('')
