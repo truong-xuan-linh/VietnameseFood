@@ -6,8 +6,8 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-from keras.models import load_model
-from keras.preprocessing import image
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 
 
 classes = [
@@ -65,7 +65,7 @@ def plot_probs(outputs):
 
 
 st.markdown(
-    "<h1 style='text-align: center;'>Vietnamese Foods Classification 🍜</h1> ",
+    "<h1 style='text-align: center;'>Vietnamese Foods Classification</h1> ",
     unsafe_allow_html=True
 )
 
