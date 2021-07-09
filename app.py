@@ -6,7 +6,7 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-import tensorflow-cpu as tf
+import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 
 
