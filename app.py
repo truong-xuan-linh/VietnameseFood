@@ -9,6 +9,7 @@ import streamlit.components.v1 as components
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
+model = load_model("model/best_model.h5")
 
 classes = [
     'banh_mi_nuong', 
@@ -103,7 +104,6 @@ elif url:
 
 img_test = preprocess_image('./test.jpg')
 
-model = load_model("model/best_model.h5")
 pred_probs = model.predict(img_test)[0]
 print(pred_probs)
 
