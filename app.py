@@ -43,7 +43,7 @@ classes = [
     'bap_xao'
 ]
 
-with open("info.txt") as f:
+with open("food.txt") as f:
     info = ast.literal_eval(f.read())
 
 
@@ -65,7 +65,7 @@ def plot_probs(outputs):
 
 
 st.markdown(
-    "<h1 style='text-align: center;'>Vietnamese Foods Classification 🍜</h1> ",
+    "<h1 style='text-align: center;'>Vietnamese Foods Classification</h1> ",
     unsafe_allow_html=True
 )
 
@@ -103,6 +103,7 @@ elif url:
 
 img_test = preprocess_image('./test.jpg')
 model = load_model('final_model.h5')
+model.load_weights(final_model)
 pred_probs = model.predict(img_test)[0]
 print(pred_probs)
 
