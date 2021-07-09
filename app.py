@@ -43,7 +43,7 @@ classes = [
     'bap_xao'
 ]
 
-with open("info.txt") as f:
+with open(".txt") as f:
     info = ast.literal_eval(f.read())
 
 
