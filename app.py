@@ -104,7 +104,6 @@ elif url:
 
 img_test = preprocess_image('./test.jpg')
 model = load_model('model/best_model.h5')
-model.load_weights('model/best_model.h5')
 pred_probs = model.predict(img_test)[0]
 print(pred_probs)
 
