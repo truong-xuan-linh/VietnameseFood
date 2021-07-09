@@ -74,7 +74,7 @@ st.markdown(
     <center>
         <img 
             src='https://image.thanhnien.vn/1024/uploaded/daly/2018_12_11/2_iwse.jpg' 
-            style='width: 90%;'
+            style='width: 95%;'
         >
     </center><br/>
     ''',
@@ -97,12 +97,13 @@ if uploaded_file is not None:
 elif url:
     urllib.request.urlretrieve(url, './test.jpg')
     st.markdown(
-        f"<center><img src='{url}' style='width: 90%;'></center>",
+        f"<center><img src='{url}' style='width: 95%;'></center>",
         unsafe_allow_html=True
     )
 
 img_test = preprocess_image('./test.jpg')
-model = load_model('model/best_model.h5')
+
+model = load_model("model/best_model.h5")
 pred_probs = model.predict(img_test)[0]
 print(pred_probs)
 
