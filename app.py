@@ -44,7 +44,7 @@ classes = [
 ]
 
 with open("food.txt") as f:
-    info = ast.literal_eval(f.read())
+     info = ast.literal_eval(f.read())
 
 
 def preprocess_image(img_path):
@@ -103,7 +103,7 @@ elif url:
 
 img_test = preprocess_image('./test.jpg')
 
-model = load_model("./model/best_model.h5")
+model = load_model("model/best_model.h5")
 pred_probs = model.predict(img_test)[0]
 print(pred_probs)
 
