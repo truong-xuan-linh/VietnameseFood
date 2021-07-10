@@ -49,7 +49,7 @@ classes = [
 
 with open("food.txt", "r", encoding="utf-8") as f:
      food = ast.literal_eval(f.read())
-
+st.markdown(food['banh_'])
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(300, 300))
     img = image.img_to_array(img) / 255
@@ -104,7 +104,6 @@ def main():
         )
 
     img_test = preprocess_image('./test.jpg')
-    food[label]
     model_path = 'model/final_model.h5'
     model = load_model(model_path)
     #model.load_weights(model_path)
