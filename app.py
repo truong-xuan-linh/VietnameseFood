@@ -1,4 +1,5 @@
 import ast
+import torch
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -6,9 +7,7 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-import tensorflow as tf
-from tensorflow.keras.preprocessing import image
-from fastai.vision import load_learner
+from fastai.vision import load_learner, open_image
 
 classes = [
     'banh_mi_nuong', 
@@ -46,12 +45,6 @@ classes = [
 with open("food.txt") as f:
      info = ast.literal_eval(f.read())
 
-
-def preprocess_image(img_path):
-    img = image.load_img(img_path, target_size=(300, 300))
-    img = image.img_to_array(img) / 255
-    img = np.expand_dims(img, axis=0)
-    return img
 
 
 def plot_probs(outputs):
@@ -101,19 +94,15 @@ def main():
             unsafe_allow_html=True
         )
 
-    img_test = preprocess_image('./test.jpg')
+    img_test = open_image('./test.jpg')
     
     model_path = 'model/best_model.h5'
-    model = load_learner(model_path)
-    pred_probs = model.predict(img_test)[0]
-    print(pred_probs)
+    learn = load_learner(model_path)
+    pred_class, pred_idx, outputs = learn.predict(img_test)
+    st.markdown(food[str(pred_class)])
+    st.markdown(f"**Probability:** {outputs[pred_idx] * 100:.2f}%")
 
-    index = np.argmax(pred_probs)
-    label = classes[index]
-
-    st.markdown(food[label])
-
-    plot_probs(pred_probs)
+    plot_probs(outputs)
 
 if __name__ == "__main__":
     main()
