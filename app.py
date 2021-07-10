@@ -42,7 +42,7 @@ classes = [
     'bap_xao'
 ]
 
-with open("food.txt") as f:
+with open("food.txt", "r", encoding="utf-8") as f:
      food = ast.literal_eval(f.read())
 
 def preprocess_image(img_path):
