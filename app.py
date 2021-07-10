@@ -6,8 +6,19 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import *
+from tensorflow.keras.layers import *
 from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.efficientnet import EfficientNetB0, preprocess_input
+from tensorflow.keras.optimizers import *
+from tensorflow.keras.utils import *
+from tensorflow.keras.initializers import *
+
+WIDTH = 224
+HEIGHT = 224
+LEARNING_RATE = 0.0001
+CLASSES = 30
+SEED = 120
 
 classes = [
     'banh_mi_nuong', 
@@ -100,9 +111,21 @@ def main():
 
     img_test = preprocess_image('./test.jpg')
     
+    
+    base_model = EfficientNetB0(include_top = False, weights = 'imagenet', input_shape = (WIDTH, HEIGHT, 3))
+    x = base_model.output
+    x = GlobalAveragePooling2D()(x)
+    x = BatchNormalization()(x)
+    x = Dense(1280, activation = 'relu', kernel_initializer = glorot_uniform(SEED), bias_initializer = 'zeros')(x)
+    x = BatchNormalization()(x)
+    predictions = Dense(CLASSES, activation = 'softmax', kernel_initializer = 'random_uniform', bias_initializer = 'zeros')(x)
+    model = Model(inputs = base_model.input, outputs = predictions)
+    for layer in model.layers: layer.trainable = True
+    model.compile(optimizer = Adam(lr = LEARNING_RATE), loss = 'categorical_crossentropy', metrics = ['accuracy'])
+    
     model_path = 'model/best_model.h5'
 
-    model = load_model(model_path)
+    model.load_weight(model_path)
     pred_probs = model.predict(img_test)[0]
 
     index = np.argmax(pred_probs)
