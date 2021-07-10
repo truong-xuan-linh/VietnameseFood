@@ -7,12 +7,7 @@ import urllib.request
 import streamlit as st
 import streamlit.components.v1 as components
 from tensorflow.keras.models import *
-from tensorflow.keras.layers import *
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications.efficientnet import EfficientNetB0, preprocess_input
-from tensorflow.keras.optimizers import *
-from tensorflow.keras.utils import *
-from tensorflow.keras.initializers import *
 
 classes = [
     'banh_mi_nuong', 
@@ -47,8 +42,6 @@ classes = [
     'bap_xao'
 ]
 
-with open("food.txt", "r", encoding="utf-8") as f:
-     food = ast.literal_eval(f.read())
 
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(300, 300))
@@ -112,6 +105,9 @@ def main():
     index = np.argmax(pred_probs)
     label = classes[index]
     
+    with open("food.txt", "r", encoding="utf-8") as f:
+        food = ast.literal_eval(f.read())
+        
     st.markdown(food[label])
     
     st.markdown(f"**Probability:** {pred_probs[index] * 100:.2f}%")
