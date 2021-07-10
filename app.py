@@ -123,7 +123,7 @@ def main():
     for layer in model.layers: layer.trainable = True
     model.compile(optimizer = Adam(lr = LEARNING_RATE), loss = 'categorical_crossentropy', metrics = ['accuracy'])
     
-    model_path = 'model/best_model.h5'
+    model_path = 'model/final_model.h5'
 
     model.load_weights(model_path)
     pred_probs = model.predict(img_test)[0]
