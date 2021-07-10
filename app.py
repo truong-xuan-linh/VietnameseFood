@@ -103,7 +103,7 @@ def main():
 
     img_test = preprocess_image('./test.jpg')
 
-    model_path = './model/best_model.h5'
+    model_path = './model/transfer_best_model.h5'
     model = tf.keras.models.load_model(model_path)
     pred_probs = model.predict(img_test)[0]
     print(pred_probs)
