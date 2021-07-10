@@ -104,7 +104,7 @@ def main():
         )
 
     img_test = preprocess_image('./test.jpg')
-    
+    food[label]
     model_path = 'model/final_model.h5'
     model = load_model(model_path)
     #model.load_weights(model_path)
