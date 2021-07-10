@@ -7,7 +7,8 @@ import urllib.request
 
 import streamlit as st
 import streamlit.components.v1 as components
-from fastai.vision import load_learner, open_image
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 
 classes = [
     'banh_mi_nuong', 
@@ -45,7 +46,11 @@ classes = [
 with open("food.txt") as f:
      info = ast.literal_eval(f.read())
 
-
+def preprocess_image(img_path):
+    img = image.load_img(img_path, target_size=(300, 300))
+    img = image.img_to_array(img) / 255
+    img = np.expand_dims(img, axis=0)
+    return img
 
 def plot_probs(outputs):
     probs = pd.Series(np.round(outputs * 100, 2), classes)
@@ -94,15 +99,21 @@ def main():
             unsafe_allow_html=True
         )
 
-    img_test = open_image('./test.jpg')
+    img_test = preprocess_image('./test.jpg')
     
     model_path = 'model/best_model.h5'
-    learn = load_learner(model_path)
-    pred_class, pred_idx, outputs = learn.predict(img_test)
-    st.markdown(food[str(pred_class)])
-    st.markdown(f"**Probability:** {outputs[pred_idx] * 100:.2f}%")
 
-    plot_probs(outputs)
+    model = load_model(model_path)
+    pred_probs = model.predict(img_test)[0]
+
+    index = np.argmax(pred_probs)
+    label = classes[index]
+    
+    st.markdown(food[label])
+    
+    st.markdown(f"**Probability:** {pred_probs[index] * 100:.2f}%")
+
+    plot_probs(pred_probs)
 
 if __name__ == "__main__":
     main()
