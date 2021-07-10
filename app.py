@@ -125,7 +125,7 @@ def main():
     
     model_path = 'model/best_model.h5'
 
-    model.load_weight(model_path)
+    model.load_weights(model_path)
     pred_probs = model.predict(img_test)[0]
 
     index = np.argmax(pred_probs)
