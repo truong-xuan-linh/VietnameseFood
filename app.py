@@ -43,7 +43,7 @@ classes = [
 ]
 
 with open("food.txt") as f:
-     info = ast.literal_eval(f.read())
+     food = ast.literal_eval(f.read())
 
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(300, 300))
