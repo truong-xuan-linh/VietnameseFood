@@ -62,7 +62,7 @@ def plot_probs(outputs):
     st.plotly_chart(fig, use_container_width=True)
 
 st.markdown(
-    "<h1 style='text-align: center;'>Vietnamese Foods Classification</h1> ",
+    "<h1 style='text-align: center;'>VIETNAMESE FOODS CLASSIFICATION</h1> ",
     unsafe_allow_html=True
     )
 
@@ -77,6 +77,11 @@ st.markdown(
     ''',
     unsafe_allow_html=True
 )
+
+st.markdown(
+    "<h1 style='text-align: center;'>Input</h1> ",
+    unsafe_allow_html=True
+    )
 
 uploaded_file = st.file_uploader("Choose a file")
 url = st.text_input(
@@ -96,6 +101,11 @@ elif url:
     st.markdown(
         f"<center><img src='{url}' style='width: 95%;'></center>",
         unsafe_allow_html=True
+    )
+
+st.markdown(
+    "<h1 style='text-align: center;'>Output</h1> ",
+    unsafe_allow_html=True
     )
 
 img_test = preprocess_image('./test.jpg')
