@@ -105,7 +105,7 @@ pred_probs = model.predict(img_test)[0]
 index = np.argmax(pred_probs)
 label = classes[index]
 
-if (pred_probs[index] * 100:.2) >= 70:
+if (pred_probs[index] * 100) >= 70.0:
     st.markdown(food[label])
     st.markdown(f"**Probability:** {pred_probs[index] * 100:.2f}%")
 else:
