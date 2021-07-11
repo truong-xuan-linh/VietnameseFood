@@ -9,6 +9,12 @@ import streamlit.components.v1 as components
 from tensorflow.keras.models import *
 from tensorflow.keras.preprocessing import image
 
+from gtts import gTTS
+import IPython
+tts = gTTS(text='bánh xèo', lang='vi')
+tts.save("good.mp3")
+IPython.display.Audio("good.mp3")
+
 classes = [
     'banh_beo',
     'banh_bot_loc', 
