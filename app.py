@@ -44,8 +44,8 @@ classes = [
 
 
 def preprocess_image(img_path):
-    img = image.load_img(img_path, target_size=(300, 300))
-    img = image.img_to_array(img) / 255
+    img = image.load_img(img_path, target_size=(224, 224))
+    img = image.img_to_array(img)
     img = np.expand_dims(img, axis=0)
     return img
 
