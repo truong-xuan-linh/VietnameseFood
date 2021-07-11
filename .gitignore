@@ -1,3 +1,0 @@
-*.zip
-*.h5
-!model/best_model.h5
