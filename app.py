@@ -59,59 +59,61 @@ def plot_probs(outputs):
     fig.update_xaxes(title='')
     st.plotly_chart(fig, use_container_width=True)
 
-def main():
+st.markdown(
+    "<h1 style='text-align: center;'>Vietnamese Foods Classification</h1> ",
+    unsafe_allow_html=True
+    )
+
+st.markdown(
+    '''
+    <center>
+        <img 
+            src='https://image.thanhnien.vn/1024/uploaded/daly/2018_12_11/2_iwse.jpg' 
+            style='width: 95%;'
+        >
+    </center><br/>
+    ''',
+    unsafe_allow_html=True
+)
+
+uploaded_file = st.file_uploader("Choose a file")
+url = st.text_input(
+    'Image Url: ', 
+    'https://cdn.tgdd.vn/Files/2020/03/09/1241004/3-mon-banh-mi-kep-la-mieng-hap-dan-thom-ngon-kho-cuong-13.jpg'
+)
+st.write('')
+st.write('')
+
+if uploaded_file is not None:
+    bytes_data = uploaded_file.read()
+    st.image(bytes_data, use_column_width=True)
+    with open('./test.jpg', 'wb') as f: 
+        f.write(bytes_data)
+elif url:
+    urllib.request.urlretrieve(url, './test.jpg')
     st.markdown(
-        "<h1 style='text-align: center;'>Vietnamese Foods Classification</h1> ",
+        f"<center><img src='{url}' style='width: 95%;'></center>",
         unsafe_allow_html=True
     )
 
-    st.markdown(
-        '''
-        <center>
-            <img 
-                src='https://image.thanhnien.vn/1024/uploaded/daly/2018_12_11/2_iwse.jpg' 
-                style='width: 95%;'
-            >
-        </center><br/>
-        ''',
-        unsafe_allow_html=True
-    )
+img_test = preprocess_image('./test.jpg')
+model_path = 'model/final_model.h5'
+model = load_model(model_path)
 
-    uploaded_file = st.file_uploader("Choose a file")
-    url = st.text_input(
-    	'Image Url: ', 
-    	'https://cdn.tgdd.vn/Files/2020/03/09/1241004/3-mon-banh-mi-kep-la-mieng-hap-dan-thom-ngon-kho-cuong-13.jpg'
-    )
-    st.write('')
-    st.write('')
+pred_probs = model.predict(img_test)[0]
 
-    if uploaded_file is not None:
-        bytes_data = uploaded_file.read()
-        st.image(bytes_data, use_column_width=True)
-        with open('./test.jpg', 'wb') as f: 
-            f.write(bytes_data)
-    elif url:
-        urllib.request.urlretrieve(url, './test.jpg')
-        st.markdown(
-            f"<center><img src='{url}' style='width: 95%;'></center>",
-            unsafe_allow_html=True
-        )
+index = np.argmax(pred_probs)
+label = classes[index]
 
-    img_test = preprocess_image('./test.jpg')
-    model_path = 'model/final_model.h5'
-    model = load_model(model_path)
-    #model.load_weights(model_path)
-    pred_probs = model.predict(img_test)[0]
-
-    index = np.argmax(pred_probs)
-    label = classes[index]
-   
-        
+if (pred_probs[index] * 100:.2) >= 70:
     st.markdown(food[label])
-    
     st.markdown(f"**Probability:** {pred_probs[index] * 100:.2f}%")
+else:
+    st.markdown(
+        "<h1 style='text-align: center;'>Can't identify this </h1> ",
+        unsafe_allow_html=True
+    )
+    
+plot_probs(pred_probs)
 
-    plot_probs(pred_probs)
 
-if __name__ == "__main__":
-    main()
