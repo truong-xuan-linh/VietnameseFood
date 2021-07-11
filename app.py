@@ -9,8 +9,6 @@ import streamlit.components.v1 as components
 from tensorflow.keras.models import *
 from tensorflow.keras.preprocessing import image
 
-from gtts import gTTS
-import IPython
 
 
 classes = [
