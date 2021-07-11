@@ -41,7 +41,8 @@ classes = [
     'xoai_lac', 
     'xoi_gac'
 ]
-
+with open("food.txt", "r", encoding="utf-8") as f:
+    food = ast.literal_eval(f.read())
 
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(224, 224))
@@ -104,9 +105,7 @@ def main():
 
     index = np.argmax(pred_probs)
     label = classes[index]
-    
-    with open("food.txt", "r", encoding="utf-8") as f:
-        food = ast.literal_eval(f.read())
+   
         
     st.markdown(food[label])
     
