@@ -97,7 +97,7 @@ def main():
         )
 
     img_test = preprocess_image('./test.jpg')
-    model_path = 'best_model.h5'
+    model_path = 'model/final_model.h5'
     model = load_model(model_path)
     #model.load_weights(model_path)
     pred_probs = model.predict(img_test)[0]
