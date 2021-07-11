@@ -108,11 +108,12 @@ pred_probs = model.predict(img_test)[0]
 
 index = np.argmax(pred_probs)
 label = classes[index]
-
+audio_path = 'food_audio/' + label + '.mp3’
 if (pred_probs[index] * 100) >= 70.0:
-    with open('food_audio/' + label + '.mp3’, ‘rb’) as f:
-    audio_bytes = f.read()
+    with open(audio_path, ‘rb’) as f:
+        audio_bytes = f.read()
     st.audio(audio_bytes, format = 'audio/ogg', start_time = 0)
+    
     st.markdown(food[label])
     st.markdown(f"**Probability:** {pred_probs[index] * 100:.2f}%")
 else:
