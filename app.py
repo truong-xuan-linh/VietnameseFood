@@ -12,11 +12,6 @@ from tensorflow.keras.preprocessing import image
 from gtts import gTTS
 import IPython
 
-tts = gTTS(text='bánh xèo', lang='vi')
-tts.save("good.mp3")
-audio_file = open('good.mp3’, ‘rb’)
-audio_bytes = audio_file.read()
-st.audio(audio_bytes, format = 'audio/ogg', start_time = 0)
 
 classes = [
     'banh_beo',
@@ -115,6 +110,9 @@ index = np.argmax(pred_probs)
 label = classes[index]
 
 if (pred_probs[index] * 100) >= 70.0:
+    audio_file = open('food_audio/' + label + '.mp3’, ‘rb’)
+    audio_bytes = audio_file.read()
+    st.audio(audio_bytes, format = 'audio/ogg', start_time = 0)
     st.markdown(food[label])
     st.markdown(f"**Probability:** {pred_probs[index] * 100:.2f}%")
 else:
