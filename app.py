@@ -11,9 +11,10 @@ from tensorflow.keras.preprocessing import image
 
 from gtts import gTTS
 import IPython
+
 tts = gTTS(text='bánh xèo', lang='vi')
-tts.save("good.mp3")
-IPython.display.Audio("good.mp3")
+
+st.audio(tts, format='audio/mp3')
 
 classes = [
     'banh_beo',
