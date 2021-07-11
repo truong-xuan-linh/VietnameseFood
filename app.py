@@ -62,7 +62,7 @@ def plot_probs(outputs):
     st.plotly_chart(fig, use_container_width=True)
 
 st.markdown(
-    "<h1 style='text-align: center;'>VIETNAMESE FOODS CLASSIFICATION</h1> ",
+    "<h1 style='text-align: center;'>VIETNAMESE STREETSTREET FOODS CLASSIFICATION</h1> ",
     unsafe_allow_html=True
     )
 
