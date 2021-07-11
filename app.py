@@ -13,8 +13,10 @@ from gtts import gTTS
 import IPython
 
 tts = gTTS(text='bánh xèo', lang='vi')
-
-st.audio(tts, format='audio/mp3')
+tts.save("good.mp3")
+audio_file = open('good.mp3’, ‘rb’)
+audio_bytes = audio_file.read()
+st.audio(audio_bytes, format = 'audio/ogg', start_time = 0)
 
 classes = [
     'banh_beo',
