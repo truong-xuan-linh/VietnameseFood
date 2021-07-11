@@ -110,7 +110,7 @@ index = np.argmax(pred_probs)
 label = classes[index]
 audio_path = 'food_audio/' + label + '.mp3'
 if (pred_probs[index] * 100) >= 70.0:
-    with open(audio_path, ‘rb’) as f:
+    with open(audio_path, 'rb') as f:
         audio_bytes = f.read()
     st.audio(audio_bytes, format = 'audio/ogg', start_time = 0)
     
