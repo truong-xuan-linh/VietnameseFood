@@ -125,7 +125,7 @@ if (pred_probs[index] * 100) >= 80.0:
     st.markdown(f"**Probability:** {pred_probs[index] * 100:.2f}%")
 else:
     st.markdown(
-        "<h1 style='text-align: center;'>Can't identify this </h1> ",
+        "<h1 style='text-align: center;'>Can't identify this food</h1> ",
         unsafe_allow_html=True
     )
     
