@@ -57,7 +57,7 @@ def plot_probs(outputs):
     probs = probs.sort_values(ascending=False).reset_index()
     probs.columns = ['Class', 'Probability']
     fig = px.bar(probs, x='Class', y='Probability')
-    fig.update_layout(xaxis_tickangle=45)
+    fig.update_layout(xaxis_tickangle=55)
     st.plotly_chart(fig, use_container_width=True)
 
 st.markdown(
