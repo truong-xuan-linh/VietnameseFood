@@ -108,7 +108,7 @@ st.markdown(
     )
 
 img_test = preprocess_image('./test.jpg')
-model_path = 'model/final_model.h5'
+model_path = 'Model/EfficientNet_B0_v2_Final/EfNet0_fine_tune_model.h5'
 model = load_model(model_path)
 
 pred_probs = model.predict(img_test)[0]
