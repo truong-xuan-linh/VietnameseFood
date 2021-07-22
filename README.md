@@ -1,5 +1,5 @@
-# VinhPhamBG-CS114.L21
-# CS114.L21
+# **Đồ án cuối kỳ môn Máy học**
+# **Đề tài: Nhận diện món ăn đường phố Việt Nam**
 
 ## GIỚI THIỆU MÔN HỌC
 <a name="gioithieumonhoc"></a>
@@ -20,3 +20,10 @@
 | 1      | 19522526      | Phạm Quang Vinh     |19522526@gm.uit.edu.vn   |
 | 2      | 19522389      | Nguyễn Minh Trí     |19522389@gm.uit.edu.vn   |
 | 3      | 19521759      | Trương Xuân Linh    |19521759@gm.uit.edu.vn   |
+
+## NỘI dung
+### [**I.   Báo cáo đồ án chi tiết**](https://github.com/VinhPhamBG/VietnameseFood/blob/main/B%C3%A1o_C%C3%A1o_%C4%90%E1%BB%93_%C3%81n_M%C3%A1y_h%E1%BB%8Dc.pdf)
+### [**II.  Dataset:**]()
+### [**III. Model**](https://github.com/VinhPhamBG/VietnameseFood/tree/main/Model)
+### [**IV.  Web-app:**](https://github.com/VinhPhamBG/VietnameseFood/blob/main/app.py)
+Web app demo: https://vietnamesefood-demo.herokuapp.com/
