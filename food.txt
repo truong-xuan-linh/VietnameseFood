@@ -127,7 +127,7 @@ Famous places in HCM:
 Price: 20.000-50.0000 VND""",
 "banh_can": """# [**Bánh căn**](https://www.tasteatlas.com/banh-can) 
 
-Cao lầu is a regional Vietnamese noodle dish, from the city of Hội An, in central Vietnam's Quảng Nam Province. It typically consists of pork and greens on a bed of rice noodles made from rice which has been soaked in lye water, giving them a characteristic texture and colour that sets the dish apart from other Vietnamese noodle dishes, including others from the same region, such as mì Quảng.
+Bánh căn are made with a thin rice flour batter. They are cooked on outdoor grills which are equipped with a specialized terracotta bánh căn mold. The mixture is poured into the mold, and the pancake is then topped with a whole shrimp and scallions, or optionally pork or quail eggs.
 
 Ingredients:
 -	Rice
