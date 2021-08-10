@@ -1,5 +1,5 @@
 # **Đồ án cuối kỳ môn Máy học**
-## **Đề tài: Nhận diện món ăn đường phố Việt Nam**
+## **ĐỀ TÀI: NHẬN DẠNG MÓN ĂN ĐƯỜNG PHỐ VIỆT NAM**
 
 ## GIỚI THIỆU MÔN HỌC
 <a name="gioithieumonhoc"></a>
