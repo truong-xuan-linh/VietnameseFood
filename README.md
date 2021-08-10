@@ -1,5 +1,5 @@
 # **Đồ án cuối kỳ môn Máy học**
-# **Đề tài: Nhận diện món ăn đường phố Việt Nam**
+## **ĐỀ TÀI: NHẬN DẠNG MÓN ĂN ĐƯỜNG PHỐ VIỆT NAM**
 
 ## GIỚI THIỆU MÔN HỌC
 <a name="gioithieumonhoc"></a>
@@ -23,7 +23,7 @@
 
 ## NỘI dung
 ### [**I.   Báo cáo đồ án chi tiết:**](https://github.com/VinhPhamBG/VietnameseFood/blob/main/B%C3%A1o_C%C3%A1o_%C4%90%E1%BB%93_%C3%81n_M%C3%A1y_h%E1%BB%8Dc.pdf)
-### [**II.  Dataset:**](https://l.facebook.com/l.php?u=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1uDbVktdj751gxZSV7EV2Dni73lPMK2JW%3Fusp%3Dsharing%26fbclid%3DIwAR36mxwUELRIu1ByVLroaE32Q6wirIYU_pgZUmMtOVX-_J4x_A7Bl3-xy3Y&h=AT3KIjoTbZSEZ9JIvYnv6nFhvpBTzzzgLV7YIGliIMo1ujGYK5F-hEfK4918DH-wsOpqvXJ22adA1hQFC-9oxvilaOS5C5HE_yrzKbF3ciinXKww8rUqwOa1JEhRa01uUbRNpitz8_KtntvCcBdexA)
+### [**II.  Dataset:**](https://github.com/VinhPhamBG/VietnameseFood/tree/main/Data)
 ### [**III. Model:**](https://github.com/VinhPhamBG/VietnameseFood/tree/main/Model)
 ### [**IV.  Web-app:**](https://github.com/VinhPhamBG/VietnameseFood/blob/main/app.py)
 Web app demo: https://vietnamesefood-demo.herokuapp.com/
