@@ -1,3 +1,4 @@
+// Nguồn: https://github.com/18520339/image-search-downloader/blob/main/get_google_urls.js
 let simulateRightClick = element => {
 	const eventInitDict = {
 		bubbles: true,
