@@ -61,7 +61,7 @@ def plot_probs(outputs):
     st.plotly_chart(fig, use_container_width=True)
 
 st.markdown(
-    "<h1 style='text-align: center;'>VIETNAMESE STREET FOODS CLASSIFICATION</h1> ",
+    "<h1 style='text-align: center;'>VIETNAMESE STREET FOOD CLASSIFICATION</h1> ",
     unsafe_allow_html=True
     )
 
@@ -69,7 +69,7 @@ st.markdown(
     '''
     <center>
         <img 
-            src='https://image.thanhnien.vn/1024/uploaded/daly/2018_12_11/2_iwse.jpg' 
+            src='https://nld.mediacdn.vn/2018/12/11/ea73ea12-abc6-4e15-8dc7-da46ed1b1cb4-epathailandmissuniverse201838-1544494397775357447804.jpg' 
             style='width: 95%;'
         >
     </center><br/>
@@ -109,9 +109,10 @@ st.markdown(
 
 img_test = preprocess_image('./test.jpg')
 model_path = 'Model/EfficientNet_B0_v2_Final/EfNet0_fine_tune_model.h5'
-model = load_model(model_path)
+if "model" not in st.session_state:
+    st.session_state.model = load_model(model_path)
 
-pred_probs = model.predict(img_test)[0]
+pred_probs = st.session_state.model.predict(img_test)[0]
 
 index = np.argmax(pred_probs)
 label = classes[index]

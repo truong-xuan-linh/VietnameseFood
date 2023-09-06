@@ -1,3 +1,14 @@
+---
+title: Vietnamese Street Food Classification
+emoji: 🐢
+colorFrom: red
+colorTo: green
+sdk: streamlit
+sdk_version: 1.26.0
+app_file: app.py
+pinned: false
+---
+
 # **Đồ án cuối kỳ môn Máy học**
 ## **ĐỀ TÀI: NHẬN DẠNG MÓN ĂN ĐƯỜNG PHỐ VIỆT NAM**
 
